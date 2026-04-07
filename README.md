@@ -40,7 +40,41 @@ If any Error, correct it in code and execute again
 Verify the generated waveform using Tabulation and Model Waveform
 
 PROGRAM:
+```
+clc;
+clear;
+
+t = 0:0.01:2*%pi;
+x = Sin (2*t);
+
+Subplot (3,2,1);
+plot (t,x);
+title("original Signal");
+
+au = x Corr (x,x);
+Subplot (3,2,2);
+plot (a,u);
+title ("FFT of autocorrelation");
+
+fw = fft (x);
+Subplot (3,2,4);
+plot (abs (fw));
+title ("FFT of Signal");
+
+fw2 = (abs (fw)).*2
+Subplot (3,2,5);
+plot (fw2);
+title("Power spectrum");
+```
 
 OUTPUT:
+<img width="2874" height="1465" alt="EXP6" src="https://github.com/user-attachments/assets/d394ae07-dd85-4f46-a121-91462eef6c72" />
+
+
+
+
 
 RESULT:
+![WhatsApp Image 2026-04-07 at 11 52 54 AM](https://github.com/user-attachments/assets/8c686b05-388d-4224-8e7c-ba800123c536)
+
+
